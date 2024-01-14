@@ -1,0 +1,46 @@
+$color-primary: #7e7e82;
+$color-text: #1b1c21;
+$color-text-special: #ffffff;
+$color-accent: #ff3e79;
+
+$color-highlight: #41f6d7;
+$color-highlight-lighten: #d9fff5;
+
+$color-special-element-inactive: #dddddd;
+$color-special-element-active: #b5b6bc;
+
+$color-background-main: #f8f8f8;
+$color-background-header: #ffffff;
+
+$color-background-section-header: linear-gradient(
+  270deg,
+  #f8f8f8 0%,
+  #fff 98.61%
+);
+
+$color-background-overflow: linear-gradient(
+  270deg,
+  #f8f8f8 16.84%,
+  rgba(248, 248, 248, 0) 100%
+);
+
+$color-input-border: #eaeaea;
+
+$screen-md: 768px;
+$screen-lg: 1366px;
+
+:root {
+  --container-offset: 16px;
+}
+
+@media screen and (min-width: $screen-md) {
+  :root {
+    --container-offset: 24px;
+  }
+}
+
+@media screen and (min-width: $screen-lg) {
+  :root {
+    --container-offset: 32px;
+  }
+}

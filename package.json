@@ -1,5 +1,5 @@
 {
-  "name": "web-last-block",
+  "name": "kata-webpack-cps-site",
   "version": "1.0.0",
   "description": "",
   "keywords": [
@@ -7,10 +7,11 @@
     "scss",
     "html",
     "javascript",
-    "webpack"
+    "webpack",
+    "kata"
   ],
   "license": "ISC",
-  "author": "Kata Academy",
+  "author": "Zuk1eX <shipsi0209@gmail.com>",
   "main": "index.js",
   "scripts": {
     "build": "webpack --mode production",
@@ -53,5 +54,8 @@
     "plugins": {
       "autoprefixer": {}
     }
+  },
+  "dependencies": {
+    "swiper": "^11.0.5"
   }
 }

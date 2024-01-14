@@ -1,17 +1,159 @@
-$bgColor: #24292e;
-$text: #fff;
+@import './fonts.scss';
+@import './variables.scss';
+@import '~swiper/swiper';
+@import '~swiper/modules/pagination';
+@import './blocks/footer.scss';
 
-@font-face {
-  font-family: 'Comic';
-  src: url('../fonts/comic.ttf') format('truetype');
-  font-weight: normal;
-  font-style: italic;
+@import './variables.scss';
+@import './reset.scss';
+@import './elements.scss';
+@import './swiper-elements.scss';
+
+@import './blocks/services.scss';
+@import './blocks/header.scss';
+@import './blocks/mobile-menu.scss';
+@import './blocks/brands.scss';
+@import './blocks/footer.scss';
+@import './blocks/modal.scss';
+
+.page {
+  max-width: 1440px;
+  margin-inline: auto;
+  overflow-x: hidden;
+  color: #1b1c21;
+  font-family: 'TT Lakes', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0.2px;
+  background-color: #f8f8f8;
+
+  &-main {
+    position: relative;
+  }
+
+  &-header {
+    background-color: #ffffff;
+  }
+
+  &-content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    transition: margin-left 0.4s ease;
+  }
 }
 
-body {
-  padding: 1rem;
-  margin: 0;
-  font-family: Comic, sans-serif;
-  background-color: $bgColor;
-  color: $text;
+.page-nav {
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 24px;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, white);
+  }
+
+  &__list {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    overflow-x: auto;
+  }
+
+  &__item {
+    // flex-grow: 1;
+    text-align: center;
+  }
+
+  &__item:last-of-type {
+    // flex-grow: 0;
+  }
+
+  &__link {
+    display: block;
+    border-radius: 6px;
+    padding: 8px 16px;
+    color: #7e7e82;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.2px;
+    text-wrap: nowrap;
+  }
+
+  &__link:hover {
+    background-color: #0000000e;
+  }
+
+  &__link:active {
+    background-color: #00000020;
+  }
+
+  &__link--active {
+    border: 2px solid #b8ffec;
+    background-color: #ffffff;
+  }
+}
+
+.content {
+  display: flex;
+
+  &__text:not(:last-of-type) {
+    margin-block-end: 20px;
+  }
+
+  &__more-btn {
+    position: relative;
+    align-self: flex-start;
+    height: 24px;
+    padding-inline-start: 30px;
+    font-weight: 500;
+    font-size: 16px;
+  }
+
+  &__more-btn::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    background: url('../img/graphics/more-icon.svg') no-repeat center;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .swiper-wrapper {
+    margin-bottom: 36px;
+  }
+}
+
+@media screen and (min-width: $screen-md) {
+}
+
+@media screen and (min-width: $screen-lg) {
+  .page-header {
+    display: none;
+  }
+
+  .content-image {
+    border-radius: 6px;
+  }
+
+  .page-nav {
+    &::after {
+      display: none;
+    }
+
+    &__list {
+      flex-wrap: wrap;
+    }
+  }
+
+  .page-content {
+    margin-left: 320px;
+  }
 }

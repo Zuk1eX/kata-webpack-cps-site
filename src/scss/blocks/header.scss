@@ -1,0 +1,40 @@
+.header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  height: 88px;
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &__main-actions {
+    display: flex;
+    gap: 16px;
+  }
+
+  &__extra-actions {
+    display: none;
+    gap: 16px;
+  }
+
+  &__divider:first-of-type {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .header {
+    gap: 20px;
+
+    &__extra-actions {
+      display: flex;
+    }
+
+    &__divider:first-of-type {
+      display: block;
+    }
+  }
+}
