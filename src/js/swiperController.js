@@ -10,7 +10,9 @@ class SwiperController {
   ) {
     this.cardsListClassName = cardsListClassName
     this.cardsListElement = document.querySelector(`.${cardsListClassName}`)
-    this.btnElement = document.querySelector(`.${btnClassName}`)
+    if (btnClassName) {
+      this.btnElement = document.querySelector(`.${btnClassName}`)
+    }
     this.swiperClassName = `.${swiperClassName}`
     this.paginationElement = document.querySelector(`.${paginationClassName}`)
     this.init = false
@@ -27,7 +29,7 @@ class SwiperController {
       }
     }
 
-    this.createBtnClickListener()
+    // this.createBtnClickListener()
     this.handleResize()
     this.update()
   }
@@ -63,14 +65,18 @@ class SwiperController {
         `${this.cardsListClassName}--shown`
       )
       this.paginationElement.classList.remove('hidden')
-      this.btnElement.classList.add('hidden')
-      this.toggleMoreBtn(false)
+      if (this.btnElement) {
+        this.btnElement.classList.add('hidden')
+        this.toggleMoreBtn(false)
+      }
       return
     }
 
     this.cardsListElement.classList.add(this.cardsListClassName)
     this.paginationElement.classList.add('hidden')
-    this.btnElement.classList.remove('hidden')
+    if (this.btnElement) {
+      this.btnElement.classList.remove('hidden')
+    }
   }
 
   createBtnClickListener() {

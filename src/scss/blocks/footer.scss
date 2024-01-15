@@ -1,18 +1,17 @@
 .footer {
-  padding: var(--container-offset);
   display: flex;
   flex-direction: column;
-  gap: 16px;
   align-items: center;
+  gap: 16px;
   border-top: 1px solid $color-highlight-lighten;
-  min-height: 1000px;
+  padding: var(--container-offset);
 
   &__copyright {
-    text-align: center;
+    opacity: 0.7218;
     color: $color-primary;
     font-weight: 500;
     line-height: 16px;
-    opacity: 0.7218;
+    text-align: center;
   }
 }
 
@@ -23,7 +22,7 @@
     padding-block: 32px 25px;
 
     a:hover {
-      text-decoration: underline
+      text-decoration: underline;
     }
 
     &__copyright {
@@ -39,7 +38,7 @@
 
 @media screen and (min-width: $screen-lg) {
   .footer {
-    padding-block-end: 21px;
     margin-left: 320px;
+    padding-block-end: 21px;
   }
 }

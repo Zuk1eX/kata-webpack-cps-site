@@ -8,11 +8,21 @@ const brandsSwiper = new SwiperController(
   'brands-swiper',
   'brands-cards__pagination'
 )
+brandsSwiper.createBtnClickListener()
+
 const typesSwiper = new SwiperController(
   'types-cards__list',
   'types__more-btn',
   'types-swiper',
   'types-cards__pagination'
+)
+typesSwiper.createBtnClickListener()
+
+const pricesSwiper = new SwiperController(
+  'prices-cards__list',
+  undefined,
+  'prices-swiper',
+  'prices-cards__pagination'
 )
 
 const moreContentButton = document.querySelector('.content__more-btn')
@@ -38,3 +48,21 @@ moreContentButton.addEventListener('click', () =>
     'more-button--shown'
   )
 )
+
+function numberWithSpaces(x) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')
+}
+
+const prices = document.querySelectorAll('.price-card__price')
+prices.forEach((el) => {
+  const elText = el.textContent
+  if (elText == 0) {
+    el.textContent = 'Бесплатно'
+    const elParentText = el.parentElement.textContent
+    el.parentElement.textContent = elParentText
+      .slice(0, elParentText.length - 2)
+      .trimLeft()
+    return
+  }
+  el.textContent = numberWithSpaces(el.textContent)
+})

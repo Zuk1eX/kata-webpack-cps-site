@@ -1,0 +1,155 @@
+.prices {
+  border-top: 1px solid #d9fff5;
+  padding-block-end: 40px;
+
+  &__title {
+    margin-block-end: 16px;
+  }
+
+  &-cards {
+    position: relative;
+    margin-inline-end: calc(-1 * var(--container-offset));
+  }
+
+  &-cards__list {
+    display: flex;
+    // grid-template-columns: repeat(auto-fill, minmax(224px, 1fr));
+    // grid-auto-rows: 160px;
+    // row-gap: 16px;
+    column-gap: var(--container-offset);
+    // max-height: 160px;
+    margin-block-end: 24px;
+    overflow-y: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  &-cards::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    width: 24px;
+    height: calc(100% - 34px);
+    background: linear-gradient(90deg, transparent, #ffffff);
+  }
+
+  &-cards__list {
+    margin-inline-end: calc(-1 * var(--container-offset));
+  }
+
+  &-cards__list--shown {
+    max-height: calc(160px * 2 + 16px);
+  }
+
+  &__info {
+    padding-block: 16px;
+    line-height: 20px;
+  }
+
+  &__offer {
+    display: inline-block;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.2px;
+    transition: color 0.2s ease;
+
+    &::after {
+      content: '';
+      display: inline-block;
+      width: 7px;
+      height: 12px;
+      margin-inline-start: 10px;
+      vertical-align: middle;
+      background: url('/src/img/graphics/arrow.svg') no-repeat center;
+      transition: margin 0.2s ease;
+    }
+
+    &:hover {
+      color: $color-accent;
+
+      &::after {
+        margin-inline-start: 15px;
+      }
+    }
+  }
+}
+
+.price-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  height: 200px;
+  border: 1px solid #eaeaea;
+  border-radius: 6px;
+  padding: 16px;
+  background-color: #ffffff;
+
+  &__group {
+  }
+
+  &__pre-title {
+    display: inline-block;
+    margin-bottom: 4px;
+    color: #7e7e82;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+  }
+
+  &__title {
+    display: -webkit-box;
+    overflow: hidden;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.2px;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+
+  &__link {
+    position: absolute;
+    width: 120px;
+    padding-inline: 12px;
+    inset-inline-end: 16px;
+    inset-block-end: 16px;
+
+    &::after {
+      right: 12px;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .prices {
+    &-cards__item {
+      width: 260px !important;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .price-card {
+    width: initial;
+  }
+
+  .prices {
+    &-cards {
+      margin-inline-end: 0;
+    }
+
+    &-cards::after {
+      display: none;
+    }
+
+    &-cards__list {
+      margin-inline-end: 0;
+    }
+  }
+}
