@@ -1,40 +1,3 @@
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 10;
-  visibility: hidden;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  overflow: auto;
-  overflow-x: hidden;
-  background-color: #fffffff2;
-  transition: all 0.2s ease;
-
-  &.show {
-    visibility: visible;
-    opacity: 1;
-  }
-}
-
-.overlay-helper {
-  position: fixed;
-  top: 0;
-  z-index: 11;
-  visibility: hidden;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  background-color: #fffffff2;
-  transition: all 0.2s ease;
-
-  &.show {
-    visibility: visible;
-    opacity: 1;
-  }
-}
-
 .menu {
   position: absolute;
   top: 0;
@@ -44,6 +7,12 @@
     -2px 0px 4px 0px rgba(69, 79, 126, 0.02);
   background-color: #ffffff;
   transition: transform 0.4s ease;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
 
   &__top {
     display: flex;
@@ -155,16 +124,6 @@
 }
 
 @media screen and (min-width: $screen-lg) {
-  .overlay {
-    position: static;
-    visibility: visible;
-    opacity: 1;
-  }
-
-  .overlay-helper {
-    position: absolute;
-  }
-
   .menu__top {
     padding-inline-end: 30px;
     padding-block: 30px;

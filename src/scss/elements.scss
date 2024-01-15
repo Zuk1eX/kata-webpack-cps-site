@@ -163,7 +163,8 @@
   height: 40px;
   border: 2px solid #ff3e79;
   border-radius: 50%;
-  background: url('../img/graphics/arrow.svg') no-repeat center;
+  background: url('../img/graphics/arrow.svg') no-repeat 55% 50%;
+  cursor: inherit;
 
   &::before {
     content: '';
@@ -243,6 +244,10 @@
 @media screen and (min-width: $screen-md) {
   .container {
     max-width: container-width(var(--container-offset));
+  }
+
+  .link-button {
+    cursor: pointer;
   }
 }
 

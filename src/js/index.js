@@ -1,9 +1,19 @@
 import '../scss/style.scss'
-import swiperCard from './mobile-slider'
 import './mobile-menu'
+import SwiperController from './swiperController'
 
-swiperCard()
-window.addEventListener('resize', swiperCard)
+const brandsSwiper = new SwiperController(
+  'brands-cards__list',
+  'brands__more-btn',
+  'brands-swiper',
+  'brands-cards__pagination'
+)
+const typesSwiper = new SwiperController(
+  'types-cards__list',
+  'types__more-btn',
+  'types-swiper',
+  'types-cards__pagination'
+)
 
 const moreContentButton = document.querySelector('.content__more-btn')
 const test = document.querySelector('.services__text')
