@@ -10,8 +10,10 @@
 @import './swiper-elements.scss';
 
 @import './blocks/services.scss';
+@import './blocks/types.scss';
 @import './blocks/header.scss';
-@import './blocks/mobile-menu.scss';
+@import './blocks/overlay.scss';
+@import './blocks/menu.scss';
 @import './blocks/brands.scss';
 @import './blocks/footer.scss';
 @import './blocks/modal.scss';
@@ -82,7 +84,7 @@
     font-size: 16px;
     line-height: 24px;
     letter-spacing: -0.2px;
-    text-wrap: nowrap;
+    white-space: nowrap;
   }
 
   &__link:hover {
@@ -122,12 +124,6 @@
     width: 24px;
     height: 24px;
     background: url('../img/graphics/more-icon.svg') no-repeat center;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  .swiper-wrapper {
-    margin-bottom: 36px;
   }
 }
 

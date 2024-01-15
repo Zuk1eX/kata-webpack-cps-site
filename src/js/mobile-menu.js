@@ -15,7 +15,6 @@ const modalsTypeModal = overlayHelper.querySelectorAll('.modal--type--modal')
 overlayHelper.addEventListener('click', (e) => {
   if (e.target === overlayHelper) {
     modals.forEach((modal) => modal.classList.remove('show'))
-    // overlay.classList.remove('show-transparent')
     overlayHelper.classList.remove('show')
 
     if (!menu.classList.contains('show')) {
@@ -42,21 +41,19 @@ modals.forEach((modal) => {
 })
 
 modalsOpenBtns.forEach((btn) => {
-  // get all open buttons
   let modalClass = btn.classList.value
     .split(' ')
     .filter((el) => el.includes('--type--'))[0]
   modalClass = modalClass.slice(modalClass.indexOf('--type--') + 8)
 
   btn.addEventListener('click', (event) => {
-    // get modal with open button in overlay-helper
     const modal = overlayHelper.querySelector(`.modal--action--${modalClass}`)
-    // remove show class in modals before adding show class to specific modal
     modalsTypeModal.forEach((modal) => modal.classList.remove('show'))
-
-    modal.classList.add('show')
-    html.classList.add('no-scroll')
-    overlayHelper.classList.add('show')
+    if (modal) {
+      modal.classList.add('show')
+      html.classList.add('no-scroll')
+      overlayHelper.classList.add('show')
+    }
   })
 })
 
