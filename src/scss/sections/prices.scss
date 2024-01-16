@@ -1,3 +1,5 @@
+$images-path: '~@images';
+
 .prices {
   border-top: 1px solid $color-highlight-lighten;
   padding-block-end: 40px;
@@ -22,7 +24,7 @@
       height: 12px;
       margin-inline-start: 10px;
       vertical-align: middle;
-      background: url('/src/img/static/arrow.svg') no-repeat center;
+      background: url('./../../img/static/arrow.svg') no-repeat center;
       transition: margin 0.2s ease;
     }
 

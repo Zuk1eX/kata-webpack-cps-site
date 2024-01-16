@@ -6,7 +6,7 @@ function toggleContentMore(contentClassName, btnClassName) {
     const isShown = contentElement.classList.toggle(
       `${contentClassName}--shown`
     )
-    btnElement.classList.toggle(`${btnClassName}--shown`)
+    btnElement.classList.toggle('more-button--shown')
 
     isShown
       ? (btnElement.textContent = 'Скрыть')
