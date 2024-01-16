@@ -2,46 +2,6 @@
   border-top: 1px solid #d9fff5;
   padding-block-end: 40px;
 
-  &__title {
-    margin-block-end: 16px;
-  }
-
-  &-cards {
-    position: relative;
-    margin-inline-end: calc(-1 * var(--container-offset));
-  }
-
-  &-cards__list {
-    display: flex;
-    // grid-template-columns: repeat(auto-fill, minmax(224px, 1fr));
-    // grid-auto-rows: 160px;
-    // row-gap: 16px;
-    column-gap: var(--container-offset);
-    // max-height: 160px;
-    margin-block-end: 24px;
-    overflow-y: hidden;
-    transition: max-height 0.3s ease;
-  }
-
-  &-cards::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 1;
-    width: 24px;
-    height: calc(100% - 34px);
-    background: linear-gradient(90deg, transparent, #ffffff);
-  }
-
-  &-cards__list {
-    margin-inline-end: calc(-1 * var(--container-offset));
-  }
-
-  &-cards__list--shown {
-    max-height: calc(160px * 2 + 16px);
-  }
-
   &__info {
     padding-block: 16px;
     line-height: 20px;
@@ -76,6 +36,47 @@
   }
 }
 
+.prices-cards {
+  position: relative;
+  margin-inline-end: calc(-1 * var(--container-offset));
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    width: 24px;
+    height: calc(100% - 34px);
+    background: linear-gradient(90deg, transparent, #ffffff);
+  }
+
+  &__head {
+    display: none;
+    grid-template-columns: 3fr repeat(2, 0.7fr) 120px;
+    align-items: center;
+    gap: 16px;
+    padding: 16px;
+    padding-block-start: 0;
+  }
+
+  &__list {
+    display: flex;
+    gap: var(--container-offset);
+    margin-block-end: 24px;
+    overflow-y: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  &__list {
+    margin-inline-end: calc(-1 * var(--container-offset));
+  }
+
+  &__list--shown {
+    max-height: calc(160px * 2 + 16px);
+  }
+}
+
 .price-card {
   position: relative;
   display: flex;
@@ -89,12 +90,10 @@
   padding: 16px;
   background-color: #ffffff;
 
-  &__group {
-  }
-
   &__pre-title {
     display: inline-block;
-    margin-bottom: 4px;
+    margin-block-end: 4px;
+    opacity: 0.7218;
     color: #7e7e82;
     font-weight: 500;
     font-size: 14px;
@@ -102,15 +101,30 @@
   }
 
   &__title {
-    display: -webkit-box;
     overflow: hidden;
     font-weight: 400;
     font-size: 14px;
     line-height: 18px;
     letter-spacing: 0.2px;
     text-overflow: ellipsis;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
+  }
+
+  &__group {
+    &--title {
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+
+    &--price {
+      max-width: 110px;
+      white-space: nowrap;
+    }
+
+    &--time {
+      max-width: 90px;
+      white-space: nowrap;
+    }
   }
 
   &__link {
@@ -127,8 +141,8 @@
 }
 
 @media screen and (max-width: 767px) {
-  .prices {
-    &-cards__item {
+  .prices-cards {
+    &__item {
       width: 260px !important;
     }
   }
@@ -136,20 +150,68 @@
 
 @media screen and (min-width: 768px) {
   .price-card {
+    display: grid;
+    grid-template-columns: 3fr repeat(2, 0.7fr) 120px;
+    align-items: center;
     width: initial;
-  }
+    height: auto;
+    border: none;
+    border-radius: 0;
+    padding-inline: 0;
 
-  .prices {
-    &-cards {
-      margin-inline-end: 0;
+    &:not(:last-child) {
+      border-bottom: 1px solid #eaeaea;
     }
 
-    &-cards::after {
+    &__pre-title {
+      margin: 0;
+    }
+
+    & &__pre-title {
       display: none;
     }
 
-    &-cards__list {
-      margin-inline-end: 0;
+    &__link {
+      position: relative;
+      inset: initial;
     }
+  }
+
+  .prices-cards {
+    margin-inline-end: 0;
+
+    &::after {
+      display: none;
+    }
+
+    &__head {
+      display: grid;
+    }
+
+    &__list {
+      flex-direction: column;
+      gap: 0;
+      margin-inline-end: 0;
+      border-radius: 6px;
+      padding-inline: 16px;
+      background-color: #ffffff;
+    }
+  }
+}
+
+@media screen and (min-width: $screen-lg) {
+  .prices-cards {
+    &__head {
+      grid-template-columns: 45% 1fr 0.825fr 120px;
+      padding-inline: 24px;
+    }
+
+    &__list {
+      padding-inline: 24px;
+    }
+  }
+
+  .price-card {
+    grid-template-columns: 45% 1fr 0.825fr 120px;
   }
 }

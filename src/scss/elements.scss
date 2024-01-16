@@ -49,6 +49,7 @@
 }
 
 .subtitle {
+  margin-block-end: 16px;
   padding: 16px var(--container-offset);
   color: #7e7e82;
   font-weight: 400;
@@ -164,10 +165,8 @@
   border: 2px solid #ff3e79;
   border-radius: 50%;
   background: url('../img/graphics/arrow.svg') no-repeat 55% 50%;
-  cursor: inherit;
 
   &::before {
-    content: '';
     position: absolute;
     inset: 0;
     border-radius: 5px;
@@ -246,8 +245,12 @@
     max-width: container-width(var(--container-offset));
   }
 
-  .link-button {
-    cursor: pointer;
+  .link-button::before {
+    content: '';
+  }
+
+  .subtitle {
+    margin-block-end: 24px;
   }
 }
 

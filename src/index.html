@@ -176,12 +176,12 @@
             title="Закрыть меню"
           ></button>
           <p class="title modal__title">Заказать звонок</p>
-          <form class="modal__form">
+          <form class="modal__form form-call">
             <label for="phone" class="visually-hidden">Телефон</label>
             <input
               type="tel"
               name="phone"
-              id="phone"
+              id="phone-call"
               class="input modal__input"
               placeholder="Телефон"
               pattern="\d{11}"
@@ -209,7 +209,7 @@
             title="Закрыть окно"
           ></button>
           <p class="title">Обратная связь</p>
-          <form class="modal__form">
+          <form class="modal__form form-message">
             <label for="name" class="visually-hidden">Имя</label>
             <input
               type="text"
@@ -225,7 +225,7 @@
             <input
               type="tel"
               name="phone"
-              id="phone"
+              id="phone-message"
               class="input modal__input"
               placeholder="Телефон"
               pattern="\d{11}"
@@ -569,9 +569,14 @@
           <h2 class="subtitle prices__title">Цены на услуги</h2>
           <div class="container">
             <div class="prices-cards prices-swiper">
+              <div class="prices-cards__head">
+                <span class="price-card__pre-title">Ремонтные услуги</span>
+                <span class="price-card__pre-title">Цена</span>
+                <span class="price-card__pre-title">Срок</span>
+              </div>
               <ul class="prices-cards__list swiper-wrapper">
                 <li class="price-card prices-cards__item swiper-slide">
-                  <div class="price-card__group">
+                  <div class="price-card__group price-card__group--title">
                     <span class="price-card__pre-title">Ремонтные услуги</span>
                     <h3 class="price-card__title">Диагностика</h3>
                   </div>
@@ -581,7 +586,7 @@
                       <span class="price-card__price">0</span> ₽</p
                     >
                   </div>
-                  <div class="price-card__group">
+                  <div class="price-card__group price-card__group--time">
                     <span class="price-card__pre-title">Срок</span>
                     <p class="price-card__title">30 мин</p>
                   </div>
@@ -593,7 +598,7 @@
                   >
                 </li>
                 <li class="price-card prices-cards__item swiper-slide">
-                  <div class="price-card__group">
+                  <div class="price-card__group price-card__group--title">
                     <span class="price-card__pre-title">Ремонтные услуги</span>
                     <h3 class="price-card__title">Замена дисплея</h3>
                   </div>
@@ -603,7 +608,7 @@
                       <span class="price-card__price">1000</span> ₽</p
                     >
                   </div>
-                  <div class="price-card__group">
+                  <div class="price-card__group price-card__group--time">
                     <span class="price-card__pre-title">Срок</span>
                     <p class="price-card__title">30-120 мин</p>
                   </div>
@@ -615,7 +620,7 @@
                   >
                 </li>
                 <li class="price-card prices-cards__item swiper-slide">
-                  <div class="price-card__group">
+                  <div class="price-card__group price-card__group--title">
                     <span class="price-card__pre-title">Ремонтные услуги</span>
                     <h3 class="price-card__title"
                       >Замена полифонического динамика</h3
@@ -627,7 +632,7 @@
                       <span class="price-card__price">1000</span> ₽</p
                     >
                   </div>
-                  <div class="price-card__group">
+                  <div class="price-card__group price-card__group--time">
                     <span class="price-card__pre-title">Срок</span>
                     <p class="price-card__title">30-120 мин</p>
                   </div>
@@ -639,7 +644,7 @@
                   >
                 </li>
                 <li class="price-card prices-cards__item swiper-slide">
-                  <div class="price-card__group">
+                  <div class="price-card__group price-card__group--title">
                     <span class="price-card__pre-title">Ремонтные услуги</span>
                     <h3 class="price-card__title"
                       >Тестирование с выдачей технического заключения</h3
@@ -651,7 +656,7 @@
                       <span class="price-card__price">1000</span> ₽</p
                     >
                   </div>
-                  <div class="price-card__group">
+                  <div class="price-card__group price-card__group--time">
                     <span class="price-card__pre-title">Срок</span>
                     <p class="price-card__title">30-120 мин</p>
                   </div>
@@ -663,7 +668,7 @@
                   >
                 </li>
                 <li class="price-card prices-cards__item swiper-slide">
-                  <div class="price-card__group">
+                  <div class="price-card__group price-card__group--title">
                     <span class="price-card__pre-title">Ремонтные услуги</span>
                     <h3 class="price-card__title"
                       >Замена программного обеспечения</h3
@@ -675,7 +680,7 @@
                       <span class="price-card__price">1000</span> ₽</p
                     >
                   </div>
-                  <div class="price-card__group">
+                  <div class="price-card__group price-card__group--time">
                     <span class="price-card__pre-title">Срок</span>
                     <p class="price-card__title">30-120 мин</p>
                   </div>

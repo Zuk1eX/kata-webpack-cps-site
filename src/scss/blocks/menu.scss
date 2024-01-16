@@ -11,7 +11,7 @@
   &__wrapper {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    min-height: 100vh;
   }
 
   &__top {
@@ -56,6 +56,7 @@
   }
 
   &__link {
+    position: relative;
     display: block;
     padding: 16px 24px;
     color: currentColor;
@@ -67,12 +68,7 @@
     transition-property: background-color, color;
   }
 
-  &__link--active {
-    position: relative;
-    color: #7e7e82;
-  }
-
-  &__link--active::before {
+  &__link::before {
     content: '';
     position: absolute;
     top: 50%;
@@ -80,17 +76,36 @@
     width: 4px;
     height: 32px;
     border-radius: 0 4px 4px 0;
+    opacity: 0;
     background-color: #41f6d7;
+    transition: opacity 0.3s ease;
     transform: translateY(-50%);
   }
 
   &__link:hover {
     color: #7e7e82;
     background-color: #0000000e;
+
+    &::before {
+      opacity: 1;
+    }
   }
 
   &__link:active {
     background-color: #00000020;
+  }
+
+  &__link--active {
+    color: #7e7e82;
+
+    &:hover {
+      background-color: inherit;
+      cursor: default;
+    }
+
+    &::before {
+      opacity: 1;
+    }
   }
 }
 

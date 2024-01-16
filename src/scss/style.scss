@@ -68,12 +68,7 @@
   }
 
   &__item {
-    // flex-grow: 1;
     text-align: center;
-  }
-
-  &__item:last-of-type {
-    // flex-grow: 0;
   }
 
   &__link {
@@ -126,9 +121,6 @@
     height: 24px;
     background: url('../img/graphics/more-icon.svg') no-repeat center;
   }
-}
-
-@media screen and (min-width: $screen-md) {
 }
 
 @media screen and (min-width: $screen-lg) {

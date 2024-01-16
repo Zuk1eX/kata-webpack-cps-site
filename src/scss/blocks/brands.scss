@@ -1,16 +1,12 @@
 .brands {
   border-top: 1px solid #d9fff5;
+}
 
-  &__title {
-    margin-block-end: 16px;
-  }
+.brands-cards {
+  position: relative;
+  margin-inline-end: calc(-1 * var(--container-offset));
 
-  &-cards {
-    position: relative;
-    margin-inline-end: calc(-1 * var(--container-offset));
-  }
-
-  &-cards__list {
+  &__list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(224px, 1fr));
     grid-auto-rows: 72px;
@@ -22,7 +18,7 @@
     transition: max-height 0.5s ease;
   }
 
-  &-cards::after {
+  &::after {
     content: '';
     position: absolute;
     top: 0;
@@ -33,11 +29,11 @@
     background: linear-gradient(90deg, transparent, #ffffff);
   }
 
-  &-cards__list {
+  &__list {
     margin-inline-end: calc(-1 * var(--container-offset));
   }
 
-  &-cards__list--shown {
+  &__list--shown {
     max-height: calc(72px * 4 + 16px * 3);
   }
 }
@@ -55,29 +51,22 @@
 }
 
 @media screen and (max-width: 767px) {
-  .brands {
-    &-cards__item {
+  .brands-cards {
+    &__item {
       width: 240px !important;
     }
   }
 }
 
 @media screen and (min-width: 768px) {
-  .brand-card {
-    width: initial;
-    height: initial;
-  }
+  .brands-cards {
+    margin-inline-end: 0;
 
-  .brands {
-    &-cards {
-      margin-inline-end: 0;
-    }
-
-    &-cards::after {
+    &::after {
       display: none;
     }
 
-    &-cards__list {
+    &__list {
       margin-inline-end: 0;
     }
   }

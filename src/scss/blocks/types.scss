@@ -1,16 +1,12 @@
 .types {
   border-top: 1px solid #d9fff5;
+}
 
-  &__title {
-    margin-block-end: 16px;
-  }
+.types-cards {
+  position: relative;
+  margin-inline-end: calc(-1 * var(--container-offset));
 
-  &-cards {
-    position: relative;
-    margin-inline-end: calc(-1 * var(--container-offset));
-  }
-
-  &-cards__list {
+  &__list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(224px, 1fr));
     grid-auto-rows: 160px;
@@ -22,7 +18,7 @@
     transition: max-height 0.3s ease;
   }
 
-  &-cards::after {
+  &::after {
     content: '';
     position: absolute;
     top: 0;
@@ -33,11 +29,11 @@
     background: linear-gradient(90deg, transparent, #ffffff);
   }
 
-  &-cards__list {
+  &__list {
     margin-inline-end: calc(-1 * var(--container-offset));
   }
 
-  &-cards__list--shown {
+  &__list--shown {
     max-height: calc(160px * 2 + 16px);
   }
 }
@@ -68,8 +64,8 @@
 }
 
 @media screen and (max-width: 767px) {
-  .types {
-    &-cards__item {
+  .types-cards {
+    &__item {
       width: 240px !important;
     }
   }
@@ -80,16 +76,14 @@
     width: initial;
   }
 
-  .types {
-    &-cards {
-      margin-inline-end: 0;
-    }
+  .types-cards {
+    margin-inline-end: 0;
 
-    &-cards::after {
+    &::after {
       display: none;
     }
 
-    &-cards__list {
+    &__list {
       margin-inline-end: 0;
     }
   }
