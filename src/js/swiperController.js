@@ -29,7 +29,6 @@ class SwiperController {
       }
     }
 
-    // this.createBtnClickListener()
     this.handleResize()
     this.update()
   }

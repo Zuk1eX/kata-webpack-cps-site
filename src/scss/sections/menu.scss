@@ -77,13 +77,13 @@
     height: 32px;
     border-radius: 0 4px 4px 0;
     opacity: 0;
-    background-color: #41f6d7;
+    background-color: $color-highlight;
     transition: opacity 0.3s ease;
     transform: translateY(-50%);
   }
 
   &__link:hover {
-    color: #7e7e82;
+    color: $color-primary;
     background-color: #0000000e;
 
     &::before {
@@ -96,7 +96,7 @@
   }
 
   &__link--active {
-    color: #7e7e82;
+    color: $color-primary;
 
     &:hover {
       background-color: inherit;
@@ -134,7 +134,7 @@
 
   &__link--active,
   &__link:hover {
-    color: #7e7e82;
+    color: $color-primary;
   }
 }
 

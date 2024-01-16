@@ -1,8 +1,8 @@
 const html = document.querySelector('html')
 const page = document.querySelector('.page')
-const overlayHelper = page.querySelector('.overlay-helper')
+const overlayFunctions = page.querySelector('.overlay--functions')
 
-const modals = overlayHelper.querySelectorAll('.modal')
+const modals = overlayFunctions.querySelectorAll('.modal')
 const modalsCloseBtns = []
 modals.forEach((modal) =>
   modalsCloseBtns.push(modal.querySelector('.nav-button--type--close'))
@@ -10,12 +10,12 @@ modals.forEach((modal) =>
 const modalsOpenBtns = page.querySelectorAll(
   '[class*=nav-button--type]:not([class*=close])'
 )
-const modalsTypeModal = overlayHelper.querySelectorAll('.modal--type--modal')
+const modalsTypeModal = overlayFunctions.querySelectorAll('.modal--type--modal')
 
-overlayHelper.addEventListener('click', (e) => {
-  if (e.target === overlayHelper) {
+overlayFunctions.addEventListener('click', (e) => {
+  if (e.target === overlayFunctions) {
     modals.forEach((modal) => modal.classList.remove('show'))
-    overlayHelper.classList.remove('show')
+    overlayFunctions.classList.remove('show')
 
     if (!menu.classList.contains('show')) {
       html.classList.remove('no-scroll')
@@ -32,7 +32,7 @@ modals.forEach((modal) => {
       Array.from(modals).filter((modal) => modal.classList.contains('show'))
         .length === 0
     ) {
-      overlayHelper.classList.remove('show')
+      overlayFunctions.classList.remove('show')
       if (!menu.classList.contains('show')) {
         html.classList.remove('no-scroll')
       }
@@ -47,12 +47,12 @@ modalsOpenBtns.forEach((btn) => {
   modalClass = modalClass.slice(modalClass.indexOf('--type--') + 8)
 
   btn.addEventListener('click', (event) => {
-    const modal = overlayHelper.querySelector(`.modal--action--${modalClass}`)
+    const modal = overlayFunctions.querySelector(`.modal--action--${modalClass}`)
     modalsTypeModal.forEach((modal) => modal.classList.remove('show'))
     if (modal) {
       modal.classList.add('show')
       html.classList.add('no-scroll')
-      overlayHelper.classList.add('show')
+      overlayFunctions.classList.add('show')
     }
   })
 })

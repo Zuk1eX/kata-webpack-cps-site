@@ -1,35 +1,33 @@
 @import './fonts.scss';
-@import './variables.scss';
-@import '~swiper/swiper';
-@import '~swiper/modules/pagination';
-@import './blocks/footer.scss';
 
 @import './variables.scss';
 @import './reset.scss';
 @import './elements.scss';
+@import '~swiper/swiper';
+@import '~swiper/modules/pagination';
 @import './swiper-elements.scss';
 
-@import './blocks/services.scss';
-@import './blocks/types.scss';
-@import './blocks/prices.scss';
-@import './blocks/header.scss';
-@import './blocks/overlay.scss';
-@import './blocks/menu.scss';
-@import './blocks/brands.scss';
-@import './blocks/footer.scss';
-@import './blocks/modal.scss';
+@import './sections/header.scss';
+@import './sections/overlay.scss';
+@import './sections/menu.scss';
+@import './sections/modal.scss';
+@import './sections/services.scss';
+@import './sections/brands.scss';
+@import './sections/types.scss';
+@import './sections/prices.scss';
+@import './sections/footer.scss';
 
 .page {
   max-width: 1440px;
   margin-inline: auto;
   overflow-x: hidden;
-  color: #1b1c21;
-  font-family: 'TT Lakes', sans-serif;
+  color: $color-text;
+  font-family: $font-text;
   font-weight: 400;
   font-size: 14px;
   line-height: 18px;
   letter-spacing: 0.2px;
-  background-color: #f8f8f8;
+  background-color: $color-background-main;
 
   &-main {
     position: relative;
@@ -57,7 +55,7 @@
     bottom: 0;
     width: 24px;
     height: 100%;
-    background: linear-gradient(90deg, transparent, white);
+    background: $gradient-background-overflow;
   }
 
   &__list {
@@ -75,7 +73,7 @@
     display: block;
     border-radius: 6px;
     padding: 8px 16px;
-    color: #7e7e82;
+    color: $color-primary;
     font-weight: 500;
     font-size: 16px;
     line-height: 24px;
@@ -119,7 +117,7 @@
     left: 0;
     width: 24px;
     height: 24px;
-    background: url('../img/graphics/more-icon.svg') no-repeat center;
+    background: url('../img/static/more-icon.svg') no-repeat center;
   }
 }
 
