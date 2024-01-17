@@ -79,19 +79,16 @@
     line-height: 24px;
     letter-spacing: -0.2px;
     white-space: nowrap;
+    border: 2px solid transparent;
   }
 
   &__link:hover {
-    background-color: #0000000e;
+    border: 2px solid #b8ffec;
+    background-color: #ffffff;
   }
 
   &__link:active {
     background-color: #00000020;
-  }
-
-  &__link--active {
-    border: 2px solid #b8ffec;
-    background-color: #ffffff;
   }
 }
 

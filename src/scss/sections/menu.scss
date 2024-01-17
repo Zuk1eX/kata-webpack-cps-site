@@ -84,7 +84,6 @@
 
   &__link:hover {
     color: $color-primary;
-    background-color: #0000000e;
 
     &::before {
       opacity: 1;
@@ -93,19 +92,6 @@
 
   &__link:active {
     background-color: #00000020;
-  }
-
-  &__link--active {
-    color: $color-primary;
-
-    &:hover {
-      background-color: inherit;
-      cursor: default;
-    }
-
-    &::before {
-      opacity: 1;
-    }
   }
 }
 
