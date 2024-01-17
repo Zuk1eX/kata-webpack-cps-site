@@ -771,21 +771,12 @@ button {
   transform: translateY(-50%); }
 
 .menu-nav__link:hover {
-  color: #7e7e82;
-  background-color: #0000000e; }
+  color: #7e7e82; }
   .menu-nav__link:hover::before {
     opacity: 1; }
 
 .menu-nav__link:active {
   background-color: #00000020; }
-
-.menu-nav__link--active {
-  color: #7e7e82; }
-  .menu-nav__link--active:hover {
-    background-color: inherit;
-    cursor: default; }
-  .menu-nav__link--active::before {
-    opacity: 1; }
 
 .menu-contacts__email {
   font-weight: 500;
@@ -1297,14 +1288,13 @@ button {
     font-size: 16px;
     line-height: 24px;
     letter-spacing: -0.2px;
-    white-space: nowrap; }
+    white-space: nowrap;
+    border: 2px solid transparent; }
   .page-nav__link:hover {
-    background-color: #0000000e; }
-  .page-nav__link:active {
-    background-color: #00000020; }
-  .page-nav__link--active {
     border: 2px solid #b8ffec;
     background-color: #ffffff; }
+  .page-nav__link:active {
+    background-color: #00000020; }
 
 .content {
   display: flex; }
